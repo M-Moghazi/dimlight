@@ -22,8 +22,8 @@
   --n-line: rgba(200, 195, 255, 0.14);
 
   --radius: 32px;
-  --serif: "Instrument Serif", "Iowan Old Style", Georgia, serif;
-  --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+  --serif: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --sans: "Figtree", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
   --gutter: clamp(16px, 4vw, 40px);
   --frame: clamp(8px, 1.6vw, 24px);
 }
@@ -37,8 +37,8 @@ a { color: inherit; text-underline-offset: 3px; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .wrap { width: min(1160px, 100% - 2 * var(--gutter)); margin-inline: auto; }
 
-h1, h2, .serif { font-family: var(--serif); font-weight: 400; letter-spacing: -0.02em; text-wrap: balance; }
-h2 { font-size: clamp(44px, 6.6vw, 84px); line-height: .98; margin: 0 0 18px; color: var(--ink); }
+h1, h2, .serif { font-family: var(--serif); font-weight: 350; font-optical-sizing: auto; font-variation-settings: "SOFT" 100, "WONK" 0; letter-spacing: -0.035em; text-wrap: balance; }
+h2 { font-size: clamp(38px, 5.4vw, 70px); line-height: 1.02; margin: 0 0 18px; color: var(--ink); }
 h2 em { font-style: italic; }
 h3 { letter-spacing: -0.01em; }
 
@@ -103,7 +103,7 @@ h3 { letter-spacing: -0.01em; }
 /* ---------- Hero ---------- */
 .hero { min-height: max(680px, min(100svh - 2 * var(--frame), 1000px)); display: grid; place-items: center; text-align: center; padding: 130px var(--gutter) calc(clamp(220px, 27vw, 440px) - 20px); }
 .hero .copy { position: relative; z-index: 2; }
-.hero h1 { color: var(--cream); font-size: clamp(60px, 9.4vw, 146px); line-height: .9; margin: 0 0 22px; text-shadow: 0 0 60px rgba(251, 241, 217, .18); }
+.hero h1 { color: var(--cream); font-size: clamp(50px, 7.8vw, 122px); line-height: .96; margin: 0 0 22px; text-shadow: 0 0 60px rgba(251, 241, 217, .18); }
 .hero p { font-size: clamp(18px, 1.8vw, 22px); color: #e3e0f5; margin: 0 0 34px; }
 .scene { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
 .scene svg { position: absolute; }
@@ -210,7 +210,7 @@ h3 { letter-spacing: -0.01em; }
 .tile.split { display: grid; grid-template-columns: 1fr minmax(260px, 330px); gap: 30px; align-items: center; }
 .ico { width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center; margin-bottom: 22px; background: var(--card-2); border: 1px solid var(--line); color: #5b4fd6; }
 .ico svg { width: 22px; height: 22px; }
-.big-num { font-family: var(--serif); font-size: clamp(64px, 7vw, 96px); line-height: .9; color: var(--ink); margin-bottom: 8px; }
+.big-num { font-family: var(--serif); font-variation-settings: "SOFT" 100; font-weight: 400; letter-spacing: -0.04em; font-size: clamp(56px, 6vw, 84px); line-height: .9; color: var(--ink); margin-bottom: 8px; }
 
 /* Popup mock (mirrors the real toolbar popup) */
 .popup { padding: 16px; border-radius: 18px; background: #26272e; border: 1px solid rgba(255, 255, 255, .08); box-shadow: 0 30px 60px -25px rgba(0, 0, 0, .8); color: #eceef1; font-size: 14px; }
@@ -274,7 +274,7 @@ h3 { letter-spacing: -0.01em; }
 /* ---------- Finale ---------- */
 .finale { text-align: center; padding: clamp(100px, 13vw, 160px) var(--gutter) clamp(180px, 20vw, 260px); margin-top: clamp(110px, 14vw, 180px); }
 .finale .icon { width: 108px; height: 108px; border-radius: 25px; margin: 0 auto 30px; box-shadow: 0 0 0 1px rgba(255, 255, 255, .08), 0 24px 70px -10px rgba(141, 132, 242, .6); }
-.finale h2 { font-size: clamp(52px, 8vw, 110px); }
+.finale h2 { font-size: clamp(44px, 6.6vw, 90px); }
 .finale p { color: #d3d0ec; font-size: 20px; margin: 0 auto 34px; }
 
 /* ---------- Footer ---------- */
@@ -292,12 +292,12 @@ h3 { letter-spacing: -0.01em; }
 
 /* ---------- Document pages (privacy policy) ---------- */
 .doc-hero { padding: 160px var(--gutter) 90px; text-align: center; }
-.doc-hero h1 { color: var(--cream); font-size: clamp(56px, 9vw, 120px); line-height: .92; margin: 0 0 16px; }
+.doc-hero h1 { color: var(--cream); font-size: clamp(46px, 7.4vw, 100px); line-height: .98; margin: 0 0 16px; }
 .doc-hero p { margin: 0; color: var(--n-muted); }
 .doc { width: min(760px, 100% - 2 * var(--gutter)); margin: 64px auto 0; }
 .doc .summary { padding: 28px 30px; border-radius: 28px; background: var(--card-2); border: 1px solid var(--line); font-size: 18px; color: var(--ink-2); }
-.doc .summary strong { display: block; font-family: var(--serif); font-weight: 400; font-size: 34px; line-height: 1.05; color: var(--ink); margin-bottom: 10px; letter-spacing: -0.01em; }
-.doc h2 { font-size: clamp(32px, 4.4vw, 44px); margin: 56px 0 12px; }
+.doc .summary strong { display: block; font-family: var(--serif); font-weight: 400; font-size: 28px; line-height: 1.15; color: var(--ink); margin-bottom: 10px; letter-spacing: -0.03em; font-variation-settings: "SOFT" 100; }
+.doc h2 { font-size: clamp(28px, 3.6vw, 38px); margin: 56px 0 12px; }
 .doc p, .doc li { color: var(--ink-2); }
 .doc ul { padding-left: 20px; }
 .doc li { margin-bottom: 8px; }
@@ -316,10 +316,12 @@ h3 { letter-spacing: -0.01em; }
   .help-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 760px) {
+  /* Phones: just the app icon and one button, no pill around the button. */
   .nav-pill a:not(.nav-cta) { display: none; }
-  .nav-pill { padding: 5px; }
-  .nav-pill .nav-cta { margin-left: 0; }
-  .nav-mark { width: 52px; height: 52px; }
+  .nav-pill, .nav.solid .nav-pill { padding: 0; background: none; border: 0; box-shadow: none; backdrop-filter: none; -webkit-backdrop-filter: none; }
+  .nav-mark { width: 50px; height: 50px; border-radius: 16px; }
+  .nav-pill .nav-cta { margin-left: 0; height: 50px; display: inline-flex; align-items: center; padding: 0 20px; border-radius: 16px; font-size: 16px; box-shadow: 0 8px 24px -10px rgba(0, 0, 0, .55); }
+  .nav.solid .nav-pill .nav-cta { box-shadow: 0 0 0 2px rgba(255, 255, 255, .9), 0 10px 24px -10px rgba(23, 21, 61, .6); }
   .hero { min-height: 0; padding: 200px var(--gutter) 200px; }
   .moon { left: 18px; top: 88px; width: 96px; }
   .cloud { right: -36px; top: 96px; width: 170px; opacity: .85; }
