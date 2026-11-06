@@ -2,50 +2,361 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dimlight Support</title>
-<meta name="description" content="Help and contact for Dimlight, the dark mode extension for Safari on iPhone, iPad and Mac.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dimlight — Dark mode for every website in Safari</title>
+<meta name="description" content="Dimlight brings dark mode to every website in Safari on iPhone, iPad and Mac. Sites with their own dark theme use it; everything else is gently darkened, with photos left untouched. Free, private, no account.">
+<meta name="theme-color" content="#e6e1f5">
+<meta name="apple-itunes-app" content="app-id=6831634388">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Dimlight — Dark mode for every website in Safari">
+<meta property="og:description" content="Every website, gently dark. Free for iPhone, iPad and Mac.">
+<meta property="og:url" content="https://m-moghazi.github.io/dimlight/">
+<meta property="og:image" content="https://m-moghazi.github.io/dimlight/icon.png">
+<meta name="twitter:card" content="summary">
+<script>document.documentElement.classList.add("js")</script>
 <link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
-<main>
-<header>
-  <img src="icon.png" alt="">
-  <h1>Dimlight</h1>
-  <p class="muted">Dark mode for every website in Safari, on iPhone, iPad and Mac.</p>
+<body id="top">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-apple" viewBox="0 0 24 24"><path fill="currentColor" d="M16.37 12.73c-.02-2.45 2-3.63 2.09-3.69-1.14-1.67-2.91-1.9-3.54-1.92-1.5-.15-2.94.89-3.7.89-.77 0-1.94-.87-3.19-.85-1.64.03-3.15.96-4 2.42-1.71 2.96-.44 7.34 1.22 9.74.82 1.17 1.79 2.49 3.06 2.44 1.23-.05 1.69-.79 3.18-.79 1.48 0 1.9.79 3.19.77 1.32-.03 2.16-1.19 2.96-2.37.94-1.36 1.32-2.69 1.34-2.75-.03-.02-2.57-.99-2.61-3.89ZM13.94 5.53c.67-.82 1.13-1.95 1-3.08-.97.04-2.15.65-2.85 1.46-.62.72-1.17 1.88-1.03 2.98 1.08.08 2.2-.55 2.88-1.36Z"/></symbol>
+    <symbol id="i-spark" viewBox="-1 -1 2 2"><path fill="currentColor" d="M0-1C.1-.14.14-.1 1 0 .14.1.1.14 0 1-.1.14-.14.1-1 0-.14-.1-.1-.14 0-1Z"/></symbol>
+    <symbol id="i-aster" viewBox="-1 -1 2 2"><path fill="none" stroke="currentColor" stroke-width=".16" stroke-linecap="round" d="M0-.95V.95M-.82-.47.82.47M-.82.47.82-.47"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path fill="currentColor" d="M20.5 14.6A8.5 8.5 0 0 1 9.4 3.5a8.5 8.5 0 1 0 11.1 11.1Z"/></symbol>
+    <filter id="grain-f"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter>
+    <filter id="fuzz" x="-10%" y="-20%" width="120%" height="140%"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="3" seed="4"/><feDisplacementMap in="SourceGraphic" scale="16"/></filter>
+    <radialGradient id="warm"><stop offset="0" stop-color="#ffd98a" stop-opacity=".9"/><stop offset="1" stop-color="#ffb867" stop-opacity="0"/></radialGradient>
+    <linearGradient id="rim-cool" x1="0" x2="1"><stop offset="0" stop-color="#d9d4ff" stop-opacity=".75"/><stop offset=".5" stop-color="#b9a4ff" stop-opacity=".25"/><stop offset="1" stop-color="#f0a6c8" stop-opacity=".5"/></linearGradient>
+    <linearGradient id="rim-warm" x1="0" x2="1"><stop offset="0" stop-color="#fbe6b4" stop-opacity="0"/><stop offset=".35" stop-color="#fbe6b4" stop-opacity=".85"/><stop offset=".7" stop-color="#d9c2ff" stop-opacity=".35"/><stop offset="1" stop-color="#d9c2ff" stop-opacity="0"/></linearGradient>
+  </defs>
+</svg>
+
+<header class="nav" id="nav">
+  <a class="nav-mark" href="#top" aria-label="Dimlight home"><img src="icon.png" alt=""></a>
+  <nav class="nav-pill" aria-label="Main">
+    <a href="#how">How it works</a>
+    <a href="#features">Features</a>
+    <a href="#privacy">Privacy</a>
+    <a href="#help">Help</a>
+    <a class="nav-cta" href="https://apps.apple.com/app/id6831634388">Get Dimlight</a>
+  </nav>
 </header>
 
-<div class="card">
-  <strong>Need help?</strong>
-  <p>Open an issue at <a href="https://github.com/M-Moghazi/dimlight/issues">github.com/M-Moghazi/dimlight/issues</a> and describe what happened, with the website’s address if a page looks wrong. Replies usually come within two working days.</p>
-</div>
+<main>
+  <!-- ============ Hero ============ -->
+  <section class="night hero">
+    <div class="sky" data-stars="170" data-sparks="hero"></div>
+    <div class="scene" aria-hidden="true">
+      <svg class="moon" viewBox="0 0 300 300" aria-hidden="true">
+  <defs>
+    <radialGradient id="moonfill" cx=".25" cy=".7" r=".9"><stop offset="0" stop-color="#fff6d8"/><stop offset=".6" stop-color="#f6e2a8"/><stop offset="1" stop-color="#e2c17a"/></radialGradient>
+    <clipPath id="mooncut"><path d="M137.9 32.8 L118.4 36.5 L97.8 44.4 L79.1 55.2 L64.4 69.8 L50.2 85.1 L40.3 104.9 L35.3 123.1 L33.3 146.1 L33.5 166.2 L36.9 185.3 L46.1 204.7 L56.8 222.7 L70.9 238.5 L88.8 251.8 L107.9 260.5 L128.0 266.3 L148.8 267.5 L171.1 267.5 L191.0 261.4 L208.8 251.4 L225.9 238.9 L241.8 224.7 L253.8 207.3 L262.7 189.3 L244.1 196.1 L228.7 202.0 L210.7 203.7 L190.3 202.9 L174.3 197.4 L156.1 189.7 L143.4 180.0 L128.7 165.5 L118.7 149.8 L113.3 133.2 L108.9 115.9 L107.5 98.3 L110.1 80.0 L116.1 62.2 L125.4 46.0Z"/></clipPath>
+  </defs>
+  <path d="M137.9 32.8 L118.4 36.5 L97.8 44.4 L79.1 55.2 L64.4 69.8 L50.2 85.1 L40.3 104.9 L35.3 123.1 L33.3 146.1 L33.5 166.2 L36.9 185.3 L46.1 204.7 L56.8 222.7 L70.9 238.5 L88.8 251.8 L107.9 260.5 L128.0 266.3 L148.8 267.5 L171.1 267.5 L191.0 261.4 L208.8 251.4 L225.9 238.9 L241.8 224.7 L253.8 207.3 L262.7 189.3 L244.1 196.1 L228.7 202.0 L210.7 203.7 L190.3 202.9 L174.3 197.4 L156.1 189.7 L143.4 180.0 L128.7 165.5 L118.7 149.8 L113.3 133.2 L108.9 115.9 L107.5 98.3 L110.1 80.0 L116.1 62.2 L125.4 46.0Z" fill="url(#moonfill)" opacity=".92"/>
+  <g clip-path="url(#mooncut)"><path d="M135.7 231.2L114.2 231.9M37.1 174.3L34.5 162.5M177.5 250.9L169.9 254.0M102.2 192.8L93.7 185.7M136.1 244.0L116.1 242.8M77.6 133.4L86.7 110.7M62.7 149.2L66.8 126.2M96.4 70.6L107.0 63.1M81.4 129.4L87.3 113.5M105.7 231.4L93.8 220.5M104.2 220.0L94.3 216.5M32.6 143.3L34.4 132.3M95.4 113.0L106.5 99.6M177.5 211.5L157.7 221.6M253.8 203.4L249.2 218.9M180.1 248.4L163.1 254.8M241.0 221.2L228.4 231.6M203.3 226.4L185.3 237.1M158.9 219.8L135.1 225.0M49.9 135.8L53.5 114.3M110.4 219.1L100.3 215.5M154.0 203.7L133.7 201.7M83.1 156.4L78.9 135.7M104.8 121.5L121.0 103.5M80.0 234.2L69.5 220.2M126.1 222.3L110.3 216.5M94.6 143.6L93.5 127.8M75.9 178.3L74.4 168.1M76.6 84.5L86.7 75.1M115.3 178.7L98.9 165.4M59.5 152.5L57.7 141.1M79.0 181.5L73.0 165.0M207.8 224.5L195.5 230.6M105.6 251.5L80.6 244.5M87.4 204.4L80.2 197.8M126.7 194.5L115.4 191.7M193.8 248.7L183.9 250.6M151.4 212.0L131.0 212.4M74.3 78.9L94.9 63.4M140.9 213.5L124.5 212.6M198.2 232.6L185.8 242.9M76.8 69.6L83.0 64.1M199.1 236.6L185.4 243.2M92.0 248.7L74.5 235.3M196.8 214.1L183.3 221.4M112.0 142.5L111.3 128.1M198.3 212.8L190.6 216.2M177.7 207.3L164.9 215.6M120.2 53.6L142.3 43.6M173.4 212.2L152.8 225.9M68.4 143.2L67.0 126.4M98.0 202.0L91.6 196.8M67.6 211.1L52.1 192.5M155.6 254.9L139.2 254.0M136.3 190.3L124.2 186.5M95.0 132.0L98.7 122.9M50.7 192.3L43.6 174.3M80.6 112.5L93.9 93.7M108.1 161.7L104.5 137.4M81.2 188.9L72.3 178.8M97.9 64.3L115.1 52.1M117.9 58.2L135.7 54.0M106.2 125.9L122.1 107.8M89.6 116.8L95.7 103.6M76.8 165.3L75.8 147.6M72.4 212.1L66.3 200.6M35.3 153.8L35.1 135.5M161.2 219.1L152.4 222.6M206.9 245.8L192.6 258.9M64.5 209.0L58.3 198.3M82.9 213.7L68.1 197.7M234.8 223.4L216.3 238.7M155.7 200.4L140.1 199.8M79.0 132.0L82.7 106.8M44.2 104.0L48.5 84.8M45.0 140.1L48.3 116.0M74.3 82.2L86.1 64.9M74.4 97.5L83.7 77.9M104.8 161.6L103.3 145.0M92.5 243.0L82.3 233.2M161.4 259.7L149.5 261.0M32.6 143.4L32.4 121.1M67.7 67.7L75.9 57.9M94.0 158.3L87.0 137.6M233.1 227.3L226.5 238.3M67.8 229.7L57.5 220.9M48.2 103.4L56.6 84.3M116.3 194.9L102.7 188.4M140.8 262.1L121.6 257.2M120.2 159.5L114.6 146.6M124.1 190.0L113.7 184.9M73.2 126.5L81.5 109.9M214.0 227.1L203.8 236.6M126.2 198.0L109.2 183.6M112.1 186.2L100.0 177.7" stroke="#c99f55" stroke-width="1.6" stroke-linecap="round" opacity=".55" fill="none"/></g>
+  <path d="M140.8 34.4 L109.5 41.1 L83.8 50.5 L66.2 69.9 L45.1 94.5 L34.9 115.9 L33.7 144.0 L33.0 170.3 L40.4 200.0 L56.0 223.9 L76.6 242.8 L104.1 257.4 L128.5 268.1 L154.1 265.8 L186.0 265.0 L207.7 250.2 L233.0 237.9 L247.6 216.3 L263.9 189.1 L239.1 196.5 L212.9 206.5 L189.8 203.8 L166.5 197.6 L147.6 182.0 L127.7 167.5 L114.4 143.7 L110.0 124.2 L108.9 96.5 L115.2 72.1 L119.9 50.3Z" fill="none" stroke="#fff8e4" stroke-width="2.2" stroke-linejoin="round" opacity=".9"/>
+  <path d="M137.6 29.5 L101.9 40.4 L74.8 56.9 L50.2 88.3 L40.0 118.5 L33.4 152.6 L35.3 183.2 L50.0 220.6 L78.8 246.3 L104.5 261.2 L141.8 269.3 L175.5 268.4 L206.3 252.4 L238.2 233.0 L257.9 202.8 L247.3 199.7 L214.6 205.0 L188.1 204.0 L156.5 192.1 L136.1 171.3 L117.8 144.5 L109.3 116.8 L106.8 86.6 L123.2 59.6Z" fill="none" stroke="#fbeec6" stroke-width="1.3" stroke-linejoin="round" opacity=".7"/>
+</svg>
+      <svg class="cloud" viewBox="0 0 420 210">
+        <defs>
+          <linearGradient id="cloud-g" x1=".1" y1="0" x2=".5" y2="1"><stop offset="0" stop-color="#6a73c9"/><stop offset=".45" stop-color="#4a4b9e"/><stop offset=".8" stop-color="#4b2f73"/><stop offset="1" stop-color="#7e4580"/></linearGradient>
+        </defs>
+        <g filter="url(#fuzz)">
+          <path fill="url(#cloud-g)" d="M48 168c-28 0-36-34-8-44 2-30 34-44 58-30 10-38 56-52 86-28 20-34 76-34 96 6 30-8 60 14 56 44 26 6 30 46 0 52Z"/>
+          <path fill="#2f2266" opacity=".45" d="M70 168c40-14 90-8 120-18 40-14 90-6 130-10 30-2 48 8 56 28Z"/>
+          <path fill="#a2a8ff" opacity=".18" d="M110 92c16-30 54-40 78-22-24-4-50 4-78 22Zm96-30c20-28 60-28 80 0-26-10-52-8-80 0Z"/>
+        </g>
+      </svg>
+      <svg class="land" viewBox="0 0 1440 440" preserveAspectRatio="xMidYMax slice">
+        <!-- far hills, low in the middle so the headline sits in the valley -->
+        <path fill="#2a2870" d="M0 245c150-50 300-60 450-22 110 27 190 62 270 66 80 2 180-34 290-70 140-40 290-26 430 16v205H0Z"/>
+        <path fill="none" stroke="url(#rim-cool)" stroke-width="2" d="M0 245c150-50 300-60 450-22 110 27 190 62 270 66 80 2 180-34 290-70 140-40 290-26 430 16"/>
+        <!-- mid hill, left -->
+        <path fill="#211f62" d="M0 318c120-50 280-66 420-36 100 22 180 58 280 88v70H0Z"/>
+        <path fill="none" stroke="url(#rim-warm)" stroke-width="2.2" opacity=".8" d="M0 318c120-50 280-66 420-36 100 22 180 58 280 88"/>
+        <!-- the cottage with its one lit window -->
+        <circle cx="811" cy="315" r="70" fill="url(#warm)" opacity=".28"/>
+        <path fill="none" stroke="#c8c3ff" stroke-width="3" stroke-linecap="round" opacity=".18" d="M836 276c-6-14 8-20 2-34s6-22 12-30"/>
+        <rect x="831" y="279" width="8" height="20" fill="#15163f"/>
+        <rect x="795" y="298" width="48" height="50" fill="#191a4c"/>
+        <path fill="#252566" d="M786 302 819 274l33 28Z"/>
+        <path fill="none" stroke="#fbe6b4" stroke-width="1.6" stroke-linejoin="round" opacity=".55" d="M786 302 819 274"/>
+        <rect x="805" y="309" width="12" height="12" rx="1" fill="#ffd98a"/>
+        <path stroke="#c99a4e" stroke-width="1.2" d="M811 309v12M805 315h12"/>
+        <rect x="826" y="311" width="10" height="24" fill="#111235"/>
+        <path fill="#14164a" d="M876 262l13 28h-6l13 30h-40l13-30h-6Z"/>
+        <path fill="#14164a" d="M770 296l9 20h-4l9 20h-28l9-20h-4Z"/>
+        <!-- big hill on the right -->
+        <path fill="#1d1d5f" d="M560 440c90-60 200-110 320-122 140-13 300 12 420 42 60 15 110 30 140 40v40Z"/>
+        <path fill="none" stroke="url(#rim-warm)" stroke-width="2.4" d="M560 440c90-60 200-110 320-122 140-13 300 12 420 42 60 15 110 30 140 40"/>
+        <ellipse cx="812" cy="336" rx="80" ry="12" fill="url(#warm)" opacity=".35"/>
+        <!-- rocks -->
+        <g fill="#2c2c78"><path d="M180 270l16-9 18 4 4 9h-38Z"/><path d="M330 258l12-7 14 3 3 7h-29Z"/><path d="M1180 338l14-8 16 3 4 8h-34Z"/><path d="M1300 352l10-6 12 2 3 6h-25Z"/><path d="M110 372l18-10 20 4 5 10h-43Z"/></g>
+        <g fill="#5d5cb0" opacity=".6"><path d="M180 270l16-9 18 4-14 1Z"/><path d="M330 258l12-7 14 3-11 1Z"/><path d="M1180 338l14-8 16 3-12 1Z"/><path d="M110 372l18-10 20 4-16 1Z"/></g>
+        <!-- foreground -->
+        <path fill="#121444" d="M0 440V378c160-30 340-30 500 6 70 16 130 36 170 56Z"/>
+        <path fill="none" stroke="#d9d4ff" stroke-width="1.6" opacity=".35" d="M0 378c160-30 340-30 500 6 70 16 130 36 170 56"/>
+      </svg>
+    </div>
+    <div class="grain" aria-hidden="true"><svg><rect width="100%" height="100%" filter="url(#grain-f)"/></svg></div>
 
-<h2>Turn on Dimlight</h2>
-<h3>iPhone and iPad</h3>
-<ol>
-  <li>Open <b>Settings</b> › <b>Apps</b> › <b>Safari</b> › <b>Extensions</b> (on iOS 17: <b>Settings</b> › <b>Safari</b> › <b>Extensions</b>).</li>
-  <li>Tap <b>Dimlight</b> and turn on <b>Allow Extension</b>.</li>
-  <li>Under Permissions, set <b>All Websites</b> to <b>Allow</b>.</li>
-</ol>
-<h3>Mac</h3>
-<ol>
-  <li>Open the Dimlight app and click <b>Open Safari Settings</b>.</li>
-  <li>Select the checkbox next to <b>Dimlight</b>.</li>
-  <li>Click <b>Edit Websites…</b> and set <b>Other Websites</b> to <b>Allow</b>.</li>
-</ol>
+    <div class="copy">
+      <h1>Every website,<br><em>gently dark</em></h1>
+      <p>Dark mode for Safari on iPhone, iPad and Mac</p>
+      <a class="btn-store" href="https://apps.apple.com/app/id6831634388">
+        <svg><use href="#i-apple"/></svg>
+        <span><small>Download on the</small><b>App Store</b></span>
+      </a>
+    </div>
+  </section>
 
-<h2>Questions</h2>
-<h3>A website looks wrong. What can I do?</h3>
-<p>Open Dimlight from Safari (the page menu on iPhone and iPad, the toolbar button on Mac) and choose <b>Off</b> for that website. Dimlight remembers the choice. Please also report the website so it can be fixed.</p>
-<h3>A website isn’t dark.</h3>
-<p>Reload the page. If it still isn’t dark, check that Dimlight is allowed on that website in Safari’s extension settings, or choose <b>Always dark</b> for it.</p>
-<h3>Does Dimlight work in Private Browsing?</h3>
-<p>Yes, once you allow it: turn on <b>Allow in Private Browsing</b> in Dimlight’s extension settings.</p>
-<h3>Why does Dimlight need access to every website?</h3>
-<p>To change a page’s colors, Safari has to let Dimlight work on that page. Dimlight doesn’t collect, store or send anything about the pages you visit. See the <a href="privacy/">privacy policy</a>.</p>
+  <!-- ============ Statement + live demo ============ -->
+  <section class="wrap" aria-label="Before and after Dimlight">
+    <div class="statement reveal">
+      <h2>The web, without the glare.</h2>
+      <p>Light backgrounds turn dark and dark text turns light. Photos, videos and logos keep their true colors. Drag across the page to see it.</p>
+    </div>
+    <div class="browser reveal">
+      <div class="chrome">
+        <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="url">fieldnotes.example.com</div>
+        <div class="chrome-btn" aria-hidden="true"><img src="icon.png" alt=""></div>
+      </div>
+      <div class="compare" id="compare">
+        <div class="site light" aria-hidden="true">
+          <header><div class="logo">Field<span>Notes</span></div><nav><a>Travel</a><a>Science</a><a>Ideas</a></nav></header>
+          <article>
+            <div class="kicker">Outdoors</div>
+            <div class="t">The quiet lakes worth the long drive north</div>
+            <div class="by">By Lena Hart · 8 min read</div>
+            <img class="photo" src="https://images.unsplash.com/photo-1448518340475-e3c680e9b4be?auto=format&fit=crop&w=1400&h=700&q=80" srcset="https://images.unsplash.com/photo-1448518340475-e3c680e9b4be?auto=format&fit=crop&w=900&h=450&q=80 900w, https://images.unsplash.com/photo-1448518340475-e3c680e9b4be?auto=format&fit=crop&w=1400&h=700&q=80 1400w, https://images.unsplash.com/photo-1448518340475-e3c680e9b4be?auto=format&fit=crop&w=2000&h=1000&q=75 2000w" sizes="(max-width: 760px) 100vw, 680px" alt="" draggable="false">
+            <div class="cap">Morning light over the water, an hour after sunrise. Photo: Roberto Nickson / Unsplash</div>
+            <p>Most people drive straight past the turnoff. The road narrows, the signal drops, and for twenty minutes there is nothing but pine and gravel. Then the trees open up and the water appears, flat and silver, with the mountains doubled in it.</p>
+            <div class="q">“You don’t come here for the view. You come for the silence, and the view is the bonus.”</div>
+            <p>We spent four days paddling between the three lakes, sleeping on small islands and cooking on a single burner. The <span class="lnk">full route and campsite list</span> is at the end of this piece.</p>
+          </article>
+        </div>
+        <div class="site dark" aria-hidden="true">
+          <header><div class="logo">Field<span>Notes</span></div><nav><a>Travel</a><a>Science</a><a>Ideas</a></nav></header>
+          <article>
+            <div class="kicker">Outdoors</div>
+            <div class="t">The quiet lakes worth the long drive north</div>
+            <div class="by">By Lena Hart · 8 min read</div>
+            <img class="photo" src="https://images.unsplash.com/photo-1448518340475-e3c680e9b4be?auto=format&fit=crop&w=1400&h=700&q=80" srcset="https://images.unsplash.com/photo-1448518340475-e3c680e9b4be?auto=format&fit=crop&w=900&h=450&q=80 900w, https://images.unsplash.com/photo-1448518340475-e3c680e9b4be?auto=format&fit=crop&w=1400&h=700&q=80 1400w, https://images.unsplash.com/photo-1448518340475-e3c680e9b4be?auto=format&fit=crop&w=2000&h=1000&q=75 2000w" sizes="(max-width: 760px) 100vw, 680px" alt="" draggable="false">
+            <div class="cap">Morning light over the water, an hour after sunrise. Photo: Roberto Nickson / Unsplash</div>
+            <p>Most people drive straight past the turnoff. The road narrows, the signal drops, and for twenty minutes there is nothing but pine and gravel. Then the trees open up and the water appears, flat and silver, with the mountains doubled in it.</p>
+            <div class="q">“You don’t come here for the view. You come for the silence, and the view is the bonus.”</div>
+            <p>We spent four days paddling between the three lakes, sleeping on small islands and cooking on a single burner. The <span class="lnk">full route and campsite list</span> is at the end of this piece.</p>
+          </article>
+        </div>
+        <span class="tag l">With Dimlight</span>
+        <span class="tag r">Without</span>
+        <div class="divider"><div class="knob"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6-6 6 6 6M15 6l6 6-6 6"/></svg></div></div>
+        <label class="sr-only" for="compare-range">Compare the page with and without Dimlight</label>
+        <input class="sr-only" id="compare-range" type="range" min="0" max="100" value="50">
+      </div>
+    </div>
+  </section>
 
-<nav><a href="privacy/">Privacy Policy</a> · <a href="https://github.com/M-Moghazi/dimlight/issues">Contact</a></nav>
+  <!-- ============ How it works ============ -->
+  <section class="section wrap" id="how">
+    <div class="head reveal">
+      <div><span class="label">How it works</span><h2>Three kinds of website. <em>One</em> gentle result.</h2></div>
+      <p>Dimlight looks at each page before it changes anything, and picks the lightest touch that makes it dark.</p>
+    </div>
+    <div class="ways">
+      <article class="way reveal">
+        <div class="mini native" aria-hidden="true"><div class="bar w1"></div><div class="bar w2"></div><div class="code"></div><div class="bar w3"></div><span class="pill"><svg><use href="#i-moon"/></svg>Site’s own theme</span></div>
+        <div class="txt"><span class="n">i.</span><h3>Has a dark theme</h3><p>Dimlight switches it on, even while your device is in Light Mode.</p></div>
+      </article>
+      <article class="way reveal">
+        <div class="mini" aria-hidden="true"><div class="bar w1"></div><div class="bar w4"></div><div class="img"></div><div class="bar w2"></div><span class="pill"><svg><use href="#i-spark"/></svg>Darkened</span></div>
+        <div class="txt"><span class="n">ii.</span><h3>No dark theme</h3><p>Dimlight darkens it for you, and leaves pictures exactly as they were.</p></div>
+      </article>
+      <article class="way reveal">
+        <div class="mini already" aria-hidden="true"><div class="bar w1"></div><div class="bar w3"></div><div class="bar w2"></div><div class="bar w4"></div><span class="pill"><svg><use href="#i-check"/></svg>Left alone</span></div>
+        <div class="txt"><span class="n">iii.</span><h3>Already dark</h3><p>Nothing to fix, so nothing is touched. The site looks as its designers made it.</p></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ Screenshots ============ -->
+  <section class="section" aria-label="Screenshots">
+    <div class="wrap head reveal">
+      <div><span class="label">On iPhone</span><h2>Made for reading <em>at night.</em></h2></div>
+      <p>The same Dimlight on iPhone, iPad and Mac, with one download.</p>
+    </div>
+    <div class="gallery reveal">
+      <img src="assets/shots/iphone-1.jpg" alt="A news article in Safari on iPhone, darkened by Dimlight, with its photo in true color" loading="lazy" width="598" height="1300">
+      <img src="assets/shots/iphone-2.jpg" alt="The same page split in two: before Dimlight on the left, after on the right" loading="lazy" width="598" height="1300">
+      <img src="assets/shots/iphone-3.jpg" alt="A documentation site showing its own dark theme, turned on by Dimlight" loading="lazy" width="598" height="1300">
+      <img src="assets/shots/iphone-5.jpg" alt="The Dimlight app showing that Dimlight is on and how it works" loading="lazy" width="598" height="1300">
+    </div>
+  </section>
+
+  <!-- ============ Features ============ -->
+  <section class="section wrap" id="features">
+    <div class="head reveal">
+      <div><span class="label">Features</span><h2>Quiet by default. <em>Yours</em> to tune.</h2></div>
+      <p>Nothing to configure once it’s on. When a website needs something different, the choice is one tap away in Safari.</p>
+    </div>
+    <div class="bento">
+      <div class="tile span4 dark split reveal">
+        <div>
+          <h3>Your choice, site by site.</h3>
+          <p>Open Dimlight from Safari and pick Auto, Always dark or Off for the website you’re on. It remembers. Or switch it off everywhere with one tap. Try it here.</p>
+        </div>
+        <div class="popup" id="popup">
+          <header><img src="icon.png" alt=""><strong>Dimlight</strong><button class="switch" type="button" role="switch" aria-checked="true" aria-label="Dimlight on all websites"></button></header>
+          <div class="host">fieldnotes.example.com</div>
+          <div class="status" id="popup-status">Darkened by Dimlight</div>
+          <div class="seg" role="group" aria-label="Dark mode on this site">
+            <button type="button" data-mode="auto" aria-pressed="true">Auto</button>
+            <button type="button" data-mode="force" aria-pressed="false">Always dark</button>
+            <button type="button" data-mode="off" aria-pressed="false">Off</button>
+          </div>
+          <p class="hint" id="popup-hint">Auto uses the site’s own dark theme when it has one.</p>
+        </div>
+      </div>
+      <div class="tile reveal">
+        <h3>True colors.</h3>
+        <p>Pictures are never inverted or tinted. A sunset stays a sunset.</p>
+        <div class="art thumbs" aria-hidden="true">
+          <figure><div class="ph"></div><figcaption>Before</figcaption></figure>
+          <figure><div class="ph"></div><figcaption>After</figcaption></figure>
+        </div>
+      </div>
+      <div class="tile reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></div>
+        <h3>No bright flash.</h3>
+        <p>Dimlight remembers how it handled each website, so your next visit is dark from the first frame.</p>
+      </div>
+      <div class="tile reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 12S6 5.5 12 5.5c1.6 0 3 .45 4.2 1.1M21.5 12S18 18.5 12 18.5c-1.6 0-3-.45-4.2-1.1"/><path d="M9.5 14.5a3.5 3.5 0 0 1 5-5"/><path d="m3.5 20.5 17-17"/></svg></div>
+        <h3>Private Browsing too.</h3>
+        <p>Allow it once and Dimlight works in Private Browsing just like everywhere else.</p>
+      </div>
+      <div class="tile reveal">
+        <div class="big-num">$0</div>
+        <h3>Free. Really.</h3>
+        <p>No subscription, no in-app purchases, no ads. One download for iPhone, iPad and Mac.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Privacy ============ -->
+  <section id="privacy" class="night band reveal">
+    <div class="sky" data-stars="90" data-sparks="band"></div>
+    <div class="grain" aria-hidden="true"><svg><rect width="100%" height="100%" filter="url(#grain-f)"/></svg></div>
+    <span class="label">Private by design</span>
+    <h2>What you read stays <em>between you and Safari.</em></h2>
+    <p>Dimlight works entirely on your device. It never collects or sends anything about the websites you visit.</p>
+    <div class="chips">
+      <span class="chip"><svg><use href="#i-check"/></svg>No account</span>
+      <span class="chip"><svg><use href="#i-check"/></svg>No analytics</span>
+      <span class="chip"><svg><use href="#i-check"/></svg>No ads</span>
+      <span class="chip"><svg><use href="#i-check"/></svg>No servers</span>
+    </div>
+    <a class="link-btn on-night" href="privacy/">Read the privacy policy</a>
+  </section>
+
+  <!-- ============ Help ============ -->
+  <section class="section wrap" id="help">
+    <div class="head reveal">
+      <div><span class="label">Help</span><h2>Set up in <em>under a minute.</em></h2></div>
+      <p>Safari keeps new extensions off until you allow them. Here’s where to find the switch.</p>
+    </div>
+    <div class="help-grid">
+      <div class="card reveal">
+        <h3>Turn on Dimlight</h3>
+        <div class="tabs" role="tablist" aria-label="Device">
+          <button type="button" role="tab" id="tab-ios" aria-controls="panel-ios" aria-selected="true">iPhone and iPad</button>
+          <button type="button" role="tab" id="tab-mac" aria-controls="panel-mac" aria-selected="false" tabindex="-1">Mac</button>
+        </div>
+        <div class="panel" id="panel-ios" role="tabpanel" aria-labelledby="tab-ios">
+          <ol class="steps">
+            <li><span>Open <b>Settings</b> › <b>Apps</b> › <b>Safari</b> › <b>Extensions</b>.<span class="note">On iOS 17: Settings › Safari › Extensions.</span></span></li>
+            <li><span>Tap <b>Dimlight</b> and turn on <b>Allow Extension</b>.</span></li>
+            <li><span>Under Permissions, set <b>All Websites</b> to <b>Allow</b>.</span></li>
+          </ol>
+        </div>
+        <div class="panel" id="panel-mac" role="tabpanel" aria-labelledby="tab-mac" hidden>
+          <ol class="steps">
+            <li><span>Open the Dimlight app and click <b>Open Safari Settings</b>.</span></li>
+            <li><span>Select the checkbox next to <b>Dimlight</b>.</span></li>
+            <li><span>Click <b>Edit Websites…</b> and set <b>Other Websites</b> to <b>Allow</b>.</span></li>
+          </ol>
+        </div>
+      </div>
+      <div class="faq reveal">
+        <details open>
+          <summary>A website looks wrong. What can I do?</summary>
+          <p>Open Dimlight from Safari (the page menu on iPhone and iPad, the toolbar button on Mac) and choose <b>Off</b> for that website. Dimlight remembers the choice. Please also report the website so it can be fixed.</p>
+        </details>
+        <details>
+          <summary>A website isn’t dark.</summary>
+          <p>Reload the page. If it still isn’t dark, check that Dimlight is allowed on that website in Safari’s extension settings, or choose <b>Always dark</b> for it.</p>
+        </details>
+        <details>
+          <summary>Does Dimlight work in Private Browsing?</summary>
+          <p>Yes, once you allow it: turn on <b>Allow in Private Browsing</b> in Dimlight’s extension settings.</p>
+        </details>
+        <details>
+          <summary>Why does Dimlight need access to every website?</summary>
+          <p>To change a page’s colors, Safari has to let Dimlight work on that page. Dimlight doesn’t collect, store or send anything about the pages you visit. See the <a href="privacy/">privacy policy</a>.</p>
+        </details>
+      </div>
+    </div>
+    <div class="card contact reveal">
+      <p><strong>Still need help?</strong>Open an issue and describe what happened, with the website’s address if a page looks wrong. Replies usually come within two working days.</p>
+      <a class="link-btn" href="https://github.com/M-Moghazi/dimlight/issues">Open an issue on GitHub</a>
+    </div>
+  </section>
+
+  <!-- ============ Finale ============ -->
+  <section class="night finale">
+    <div class="sky" data-stars="120" data-sparks="finale"></div>
+    <div class="scene" aria-hidden="true">
+      <svg class="land" viewBox="0 0 1440 440" preserveAspectRatio="xMidYMax slice">
+        <path fill="#2a2870" d="M0 300c180-50 360-50 540-14 140 28 240 30 360 6 180-36 360-30 540 4v144H0Z"/>
+        <path fill="none" stroke="url(#rim-cool)" stroke-width="2" d="M0 300c180-50 360-50 540-14 140 28 240 30 360 6 180-36 360-30 540 4"/>
+        <path fill="#1d1d5f" d="M0 440V360c200-40 420-40 640 0s460 40 800-10v90Z"/>
+        <path fill="none" stroke="url(#rim-warm)" stroke-width="2.2" d="M0 360c200-40 420-40 640 0s460 40 800-10"/>
+        <path fill="#121444" d="M300 440c200-40 520-50 840 0Z"/>
+      </svg>
+    </div>
+    <div class="grain" aria-hidden="true"><svg><rect width="100%" height="100%" filter="url(#grain-f)"/></svg></div>
+    <div class="copy" style="position:relative;z-index:2">
+      <img class="icon reveal" src="icon.png" alt="">
+      <h2 class="reveal">Rest your eyes <em>tonight.</em></h2>
+      <p class="reveal">Free on the App Store for iPhone, iPad and Mac.</p>
+      <a class="btn-store reveal" href="https://apps.apple.com/app/id6831634388">
+        <svg><use href="#i-apple"/></svg>
+        <span><small>Download on the</small><b>App Store</b></span>
+      </a>
+    </div>
+  </section>
 </main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="brand"><img src="icon.png" alt="">Dimlight</div>
+    <nav aria-label="Footer">
+      <a href="#help">Support</a>
+      <a href="privacy/">Privacy Policy</a>
+      <a href="https://github.com/M-Moghazi/dimlight/issues">Contact</a>
+    </nav>
+    <div>© 2026 Mohamed Moghazi · Lake photo by <a href="https://unsplash.com/photos/calm-mountain-lake-reflecting-snowy-peaks-vZ1JAXUO3-0">Roberto Nickson</a></div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
 </body>
 </html>
