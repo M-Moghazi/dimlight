@@ -147,18 +147,26 @@ body.v #g2 { font-size: 124px; }
 #f-sub { font: 500 36px/1.35 var(--sans); color: var(--n-muted); margin-top: 26px; }
 
 /* end card */
-#e-icon { width: 190px; height: 190px; border-radius: 43px; box-shadow: 0 30px 100px -20px rgba(160,140,255,.6); }
-#e-name { font-size: 210px; color: var(--cream); line-height: .95; margin-top: 30px; text-shadow: 0 0 80px rgba(251,241,217,.25); }
+#e-icon { width: 150px; height: 150px; border-radius: 34px; box-shadow: 0 30px 100px -20px rgba(160,140,255,.6); }
+#e-name { font-size: 190px; color: var(--cream); line-height: .95; margin-top: 30px; text-shadow: 0 0 80px rgba(251,241,217,.25); }
 #e-title { font-size: 64px; color: var(--n-text); line-height: 1.05; margin-top: 22px; }
-#e-btn { margin-top: 44px; display: inline-flex; align-items: center; gap: 16px; padding: 18px 40px 18px 30px; border-radius: 22px; background: var(--cream); color: #121230; box-shadow: 0 0 0 1px rgba(255,255,255,.5) inset, 0 24px 70px -14px rgba(251,241,217,.6); }
+#e-row { display: flex; align-items: center; gap: 40px; margin-top: 44px; }
+#e-col { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; text-align: left; }
+#e-qr { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 14px 14px 10px; border-radius: 22px; background: var(--cream); box-shadow: 0 24px 70px -14px rgba(251,241,217,.45); }
+#e-qr img { width: 150px; height: 150px; display: block; }
+#e-qr span { font: 700 15px var(--sans); color: #121230; letter-spacing: .02em; }
+#e-link { font: 600 30px var(--sans); color: var(--cream); letter-spacing: .01em; border-bottom: 2px solid rgba(251,241,217,.35); padding-bottom: 4px; }
+#e-btn { display: inline-flex; align-items: center; gap: 16px; padding: 18px 40px 18px 30px; border-radius: 22px; background: var(--cream); color: #121230; box-shadow: 0 0 0 1px rgba(255,255,255,.5) inset, 0 24px 70px -14px rgba(251,241,217,.6); }
 #e-btn svg { width: 42px; height: 50px; }
 #e-btn span { display: grid; line-height: 1.05; text-align: left; }
 #e-btn small { font-size: 18px; font-weight: 500; }
 #e-btn b { font-size: 38px; font-weight: 600; letter-spacing: -.015em; }
-#e-sub { font: 500 28px var(--sans); color: var(--n-muted); margin-top: 26px; }
+#e-sub { font: 500 24px var(--sans); color: var(--n-muted); }
 .v #e-icon { width: 240px; height: 240px; border-radius: 54px; }
 .v #e-name { font-size: 230px; }
 .v #e-title { font-size: 76px; }
+.v #e-qr img { width: 200px; height: 200px; }
+.v #e-row { margin-top: 60px; }
 </style>
 </head>
 <body>
@@ -220,8 +228,14 @@ body.v #g2 { font-size: 124px; }
     <img id="e-icon" src="../../icon.png">
     <div class="serif" id="e-name">Dimlight</div>
     <div class="serif" id="e-title">Rest your eyes <em>tonight.</em></div>
-    <div id="e-btn"><svg><use href="#i-apple"/></svg><span><small>Download on the</small><b>App Store</b></span></div>
-    <div id="e-sub">Free for iPhone, iPad and Mac</div>
+    <div id="e-row">
+      <div id="e-qr"><img src="dl/qr.svg"><span>Scan to download</span></div>
+      <div id="e-col">
+        <div id="e-btn"><svg><use href="#i-apple"/></svg><span><small>Download on the</small><b>App Store</b></span></div>
+        <div id="e-link">m-moghazi.github.io/dimlight</div>
+        <div id="e-sub">Free for iPhone, iPad and Mac</div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -397,8 +411,10 @@ function render(t) {
   $("e-icon").style.transform = `scale(${lerp(.7, 1, ei)})`;
   show($("e-name"), t, 17.95, null, { dy: 40, blur: 16, din: .8 });
   show($("e-title"), t, 18.3, null, { dy: 24 });
-  show($("e-btn"), t, 18.6, null, { dy: 24 });
-  show($("e-sub"), t, 18.8, null, { dy: 16 });
+  show($("e-qr"), t, 18.55, null, { dy: 24 });
+  show($("e-btn"), t, 18.7, null, { dy: 24 });
+  show($("e-link"), t, 18.85, null, { dy: 16 });
+  show($("e-sub"), t, 19.0, null, { dy: 16 });
 }
 window.render = render;
 render(0);
