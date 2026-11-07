@@ -158,6 +158,16 @@
     });
   }
 
+  if (document.getElementById('style-demo')) {
+    // ---- Style picker ----
+    const demo = document.getElementById('style-demo');
+    const btns = document.querySelectorAll('.style-pick button');
+    btns.forEach(b => b.addEventListener('click', () => {
+      demo.dataset.style = b.dataset.style;
+      btns.forEach(x => x.setAttribute('aria-pressed', String(x === b)));
+    }));
+  }
+
   if (document.querySelector('[role="tab"]')) {
     // ---- Setup tabs ----
     const tabs = [...document.querySelectorAll('[role="tab"]')];

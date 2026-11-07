@@ -208,6 +208,38 @@ h3 { letter-spacing: -0.01em; }
 .tile.dark p { color: var(--n-muted); }
 .tile.dark h3 { color: var(--cream); }
 .tile.split { display: grid; grid-template-columns: 1fr minmax(260px, 330px); gap: 30px; align-items: center; }
+.tile.span6 { grid-column: 1 / -1; }
+.styles-tile { grid-template-columns: 1fr minmax(280px, 440px); }
+.styles-tile .small { font-size: 13.5px; margin-top: 16px; }
+.style-pick { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+.style-pick button { font: inherit; font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px 8px 9px; border-radius: 999px; border: 1px solid var(--line); background: var(--card-2); color: var(--ink-2); cursor: pointer; transition: background .2s, color .2s, border-color .2s; }
+.style-pick button i { width: 18px; height: 18px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .18); }
+.style-pick [data-style="dim"] i { background: #121212; }
+.style-pick [data-style="black"] i { background: #000; }
+.style-pick [data-style="soft"] i { background: #303030; }
+.style-pick [data-style="warm"] i { background: #211c18; }
+.style-pick [data-style="midnight"] i { background: #151b28; }
+.style-pick button[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: #fff; }
+.style-pick button:focus-visible { outline: 2px solid #5b4fd6; outline-offset: 2px; }
+/* Colors are the extension's own palettes (colors.js paletteFor), sliders at 0. */
+.style-demo { --bg: #121212; --card: #1d1d23; --fg: #dbdbdb; --mu: #a6a6aa; --bd: #33333b;
+  padding: 18px; border-radius: 18px; background: var(--bg); border: 1px solid var(--bd); color: var(--fg); box-shadow: 0 30px 60px -28px rgba(11, 14, 51, .55); transition: background .35s, border-color .35s, color .35s; }
+.style-demo[data-style="black"] { --bg: #000; --card: #040404; --fg: #d0d0d0; --mu: #9b9ba0; --bd: #19191d; }
+.style-demo[data-style="soft"] { --bg: #303030; --card: #303039; --fg: #dbdbdb; --mu: #a6a6aa; --bd: #454552; }
+.style-demo[data-style="warm"] { --bg: #211c18; --card: #24201c; --fg: #e3d7be; --mu: #c1a97a; --bd: #3e3830; }
+.style-demo[data-style="midnight"] { --bg: #151b28; --card: #1b202a; --fg: #d3d8e2; --mu: #98a2b8; --bd: #2d3546; }
+.style-demo * { transition: background .35s, border-color .35s, color .35s; }
+.sd-head { display: flex; align-items: center; gap: 8px; padding-bottom: 12px; margin-bottom: 14px; border-bottom: 1px solid var(--bd); }
+.sd-head b { flex: 1; font-family: var(--serif); font-size: 16px; font-weight: 600; }
+.sd-head b span { color: var(--mu); font-weight: 400; }
+.sd-head i { width: 34px; height: 7px; border-radius: 4px; background: var(--mu); opacity: .55; }
+.sd-kicker { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; color: var(--mu); }
+.sd-title { font-family: var(--serif); font-size: 19px; line-height: 1.2; margin: 4px 0 12px; }
+.sd-photo { aspect-ratio: 2.4 / 1; border-radius: 10px; margin-bottom: 12px; background: url("https://images.unsplash.com/photo-1448518340475-e3c680e9b4be?auto=format&fit=crop&w=700&h=300&q=75") center / cover; }
+.sd-line { height: 7px; border-radius: 4px; background: var(--fg); opacity: .5; margin-bottom: 8px; }
+.sd-line.short { width: 62%; }
+.sd-card { margin-top: 12px; padding: 12px 12px 4px; border-radius: 10px; background: var(--card); border: 1px solid var(--bd); }
+.sd-card .sd-line { background: var(--mu); }
 .ico { width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center; margin-bottom: 22px; background: var(--card-2); border: 1px solid var(--line); color: #5b4fd6; }
 .ico svg { width: 22px; height: 22px; }
 .big-num { font-family: var(--serif); font-variation-settings: "SOFT" 100; font-weight: 400; letter-spacing: -0.04em; font-size: clamp(56px, 6vw, 84px); line-height: .9; color: var(--ink); margin-bottom: 8px; }
@@ -313,6 +345,7 @@ h3 { letter-spacing: -0.01em; }
   .bento { grid-template-columns: 1fr 1fr; }
   .tile, .tile.span3 { grid-column: span 1; }
   .tile.span4 { grid-column: 1 / -1; }
+  .styles-tile { grid-template-columns: 1fr; }
   .help-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 760px) {
