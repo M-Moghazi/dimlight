@@ -2,8 +2,8 @@ const { chromium } = require('playwright');
 const [,, out, fps = '30', only] = process.argv;
 (async () => {
   const b = await chromium.launch();
-  const p = await b.newPage({ viewport: { width: 1920, height: 1080 } });
-  await p.goto('file://' + __dirname + '/scene.html');
+  const p = await b.newPage({ viewport: (process.env.VERT ? { width: 1080, height: 1920 } : { width: 1920, height: 1080 }) });
+  await p.goto('file://' + __dirname + '/scene.html' + (process.env.VERT ? '?v' : ''));
   await p.evaluate(() => document.fonts.ready);
   await p.waitForTimeout(500);
   const F = +fps, times = only ? only.split(',').map(Number) : [...Array(20 * F).keys()].map(i => i / F);
