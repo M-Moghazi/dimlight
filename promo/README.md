@@ -1,6 +1,7 @@
 # Dimlight promo video
 
-`dimlight-promo-20s.mp4`: 20 seconds, 1920×1080, 30 fps, H.264 with an AAC soundtrack.
+- `dimlight-promo-20s.mp4`: 20 seconds, 1920×1080 (16:9), 30 fps, H.264 with AAC soundtrack.
+- `dimlight-promo-20s-vertical.mp4`: same cut at 1080×1920 (9:16). Render with `VERT=1 node render.js frames 30`.
 
 ## Rebuild
 
